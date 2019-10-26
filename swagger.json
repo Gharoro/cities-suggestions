@@ -1,0 +1,72 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "Cities Auto-Complete API Documentation",
+    "description": "An API endpoint that provides auto-complete suggestions for large cities in US.",
+    "version": "1.0.0"
+  },
+  "host": "localhost:3700",
+  "basePath": "/",
+  "schemes": ["http"],
+
+  "definitions": {
+    "City": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "The name of the city."
+        },
+        "latitude": {
+          "type": "number",
+          "description": "The city latitude"
+        },
+        "longitude": {
+          "type": "string",
+          "description": "The city longitude."
+        },
+        "score": {
+          "type": "number",
+          "description": "The city rank"
+        }
+      }
+    },
+    "paths": {
+      "suggestions": {
+        "get": {
+          "description": "View cities based on query string.",
+          "parameters": [
+            {
+              "name": "q",
+              "in": "query",
+              "description": "Letters in city name.",
+              "type": "string",
+              "required": true
+            },
+            {
+              "name": "latitude",
+              "in": "query",
+              "type": "number",
+              "required": false
+            },
+            {
+              "name": "longitude",
+              "in": "query",
+              "type": "number",
+              "required": false
+            }
+          ],
+          "produces": ["application/json"],
+          "responses": {
+            "200": {
+              "description": "Success",
+              "schema": {
+                "$ref": "#/definitions/City"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
