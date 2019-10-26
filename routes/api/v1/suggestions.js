@@ -7,6 +7,6 @@ const AutoComplete = require('../../../controller/appController');
 // @route   GET /suggestions
 // @desc    Display cities matching search
 // @access  Public
-router.get('/suggestions', AutoComplete.auto_complete);
+router.get('/', AutoComplete.auto_complete);
 
 module.exports = router;

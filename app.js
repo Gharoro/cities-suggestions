@@ -9,6 +9,9 @@ const swaggerDocument = require('./swagger.json');
 
 const app = express();
 
+// Controller
+const AutoComplete = require('./controller/appController');
+
 // Cors middleware
 app.use(cors());
 
@@ -16,14 +19,13 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
-// Route File
-const suggestions = require('./routes/api/v1/suggestions');
+
+// Home Page
+app.get('/suggestions', AutoComplete.auto_complete);
 
 // API Documentation
-app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
-// Use Route
-app.use('/api/v1/suggestions', suggestions);
 
 const port = process.env.PORT || 3700;
 app.listen(port, () => console.log(`App running on port ${port}`));
