@@ -6,9 +6,8 @@
     "version": "1.0.0"
   },
   "host": "pureheart-cities-suggestions.herokuapp.com",
-  "basePath": "/",
+  "basePath": "/api/v1",
   "schemes": ["https"],
-
   "definitions": {
     "City": {
       "type": "object",
