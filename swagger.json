@@ -29,39 +29,40 @@
           "description": "The city rank"
         }
       }
-    },
-    "path": {
-      "/suggestions": {
-        "get": {
-          "description": "View cities based on query string.",
-          "parameters": [
-            {
-              "name": "q",
-              "in": "query",
-              "description": "Letters in city name.",
-              "type": "string",
-              "required": true
-            },
-            {
-              "name": "latitude",
-              "in": "query",
-              "type": "number",
-              "required": false
-            },
-            {
-              "name": "longitude",
-              "in": "query",
-              "type": "number",
-              "required": false
-            }
-          ],
-          "produces": ["application/json"],
-          "responses": {
-            "200": {
-              "description": "Success",
-              "schema": {
-                "$ref": "#/definitions/City"
-              }
+    }
+  },
+  "paths": {
+    "/suggestions": {
+      "get": {
+        "parameters": [
+          {
+            "name": "q",
+            "in": "query",
+            "description": "First letters of city name",
+            "type": "string",
+            "required": true
+          },
+          {
+            "name": "latitutude",
+            "in": "query",
+            "description": "City latitude if known",
+            "type": "number",
+            "required": false
+          },
+          {
+            "name": "longitude",
+            "in": "query",
+            "description": "City longitude if known",
+            "type": "number",
+            "required": false
+          }
+        ],
+        "produces": ["application/json"],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/City"
             }
           }
         }
