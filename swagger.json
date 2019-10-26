@@ -30,7 +30,7 @@
         }
       }
     },
-    "paths": {
+    "path": {
       "/suggestions": {
         "get": {
           "description": "View cities based on query string.",
