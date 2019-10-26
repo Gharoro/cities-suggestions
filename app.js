@@ -3,6 +3,8 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const cors = require('cors');
+const swaggerUi = require('swagger-ui-express');
+const swaggerDocument = require('./swagger.json');
 
 
 const app = express();
@@ -20,6 +22,9 @@ app.use(bodyParser.json());
 
 // Home Page
 app.get('/suggestions', AutoComplete.auto_complete);
+
+// API Documentation
+app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 
 const port = process.env.PORT || 3700;
