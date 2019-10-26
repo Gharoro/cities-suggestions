@@ -32,7 +32,7 @@
     }
   },
   "paths": {
-    "suggestions": {
+    "/suggestions": {
       "get": {
         "parameters": [
           {
