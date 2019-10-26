@@ -15,7 +15,12 @@ exports.auto_complete = (req, res) => {
   if (result.length > 0) {
     return res.status(200).json({
       status: 200,
-      suggestions: result,
+      suggestions: {
+        name: result.city,
+        latitude: result.latitude,
+        longitude: result.longitude,
+        score: result.rank,
+      },
     });
   }
   return res.status(404).json({

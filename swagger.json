@@ -6,7 +6,7 @@
     "version": "1.0.0"
   },
   "host": "pureheart-cities-suggestions.herokuapp.com",
-  "basePath": "/",
+  "basePath": "",
   "schemes": ["https"],
 
   "definitions": {
@@ -32,7 +32,7 @@
       }
     },
     "paths": {
-      "suggestions": {
+      "/suggestions": {
         "get": {
           "description": "View cities based on query string.",
           "parameters": [
