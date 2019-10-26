@@ -24,8 +24,7 @@ app.use(bodyParser.json());
 app.get('/suggestions', AutoComplete.auto_complete);
 
 // API Documentation
-app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
-
+app.use('/', swaggerUi.serve, swaggerUi.setup(swaggerDocument));
 
 const port = process.env.PORT || 3700;
 app.listen(port, () => console.log(`App running on port ${port}`));

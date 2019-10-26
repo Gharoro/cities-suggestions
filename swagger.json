@@ -5,7 +5,7 @@
     "description": "An API endpoint that provides auto-complete suggestions for large cities in US.",
     "version": "1.0.0"
   },
-  "host": "localhost:3700",
+  "host": "pureheart-cities-suggestions.herokuapp.com",
   "basePath": "/",
   "schemes": ["http"],
 
